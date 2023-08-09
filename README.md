@@ -1,23 +1,26 @@
-# Set Ai
-
-## Tutorial
-https://kapernikov.com/tutorial-image-classification-with-scikit-learn/
+# Classifier
 
 ## Setup
-```
+```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt 
-cd tutorial
+pip3 install -r requirements.txt 
 ```
 
 ## Run
-```
-python pickle_images.py
-python load_json_data.py
+### 1. Transform
+```bash
+./transform/svgToPng.sh
+python3 transform/groupSets.py
 ```
 
-## examples
+### 2. Train
+```bash
+python3 train/classifier.py
 ```
-python hog_example.py
+
+### 3. Serve
+```bash
+cd app
+python3 -m flask --app app run
 ```
